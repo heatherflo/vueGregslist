@@ -1,7 +1,10 @@
 <template>
-  <div class="house-card border border-primary rounded shadow">
+  <div class="house-card border border-primary rounded shadow p-1">
     <img :src="house.imgUrl" class="img-fluid rounded-top" :alt="house.description">
-
+    <p>{{ house.description }}</p>
+    <p>Bedrooms: {{ house.bedrooms }}</p>
+    <p>Bathrooms: {{ house.bathrooms }}</p>
+    <p class="text-success text-end">${{ house.price }}</p>
 
   </div>
 </template>

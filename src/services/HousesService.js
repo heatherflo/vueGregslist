@@ -11,6 +11,13 @@ class HousesService {
     AppState.houses = response.data.map(house => new House(house))
   }
 
+  async createHouse() {
+    console.log('creating a house')
+    const response = await api.post('api/houses')
+    console.log('posted house', response.data)
+    AppState.houses
+  }
+
 }
 
 export const housesService = new HousesService()
