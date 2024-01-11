@@ -57,6 +57,9 @@ export default {
   setup() {
     const houseData = ref({})
 
+    function resetForm() {
+      houseData.value = {}
+    }
     return {
       houseData,
 
@@ -64,8 +67,9 @@ export default {
         try {
           await housesService.createHouse(houseData.value)
           Pop.success('you created a house!')
+          resetForm()
         } catch (error) {
-          Pop(error)
+          Pop.error(error)
         }
       }
     }
